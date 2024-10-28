@@ -53,80 +53,114 @@
 
     <!-- Page Header Start -->
     <div class="page-header container-fluid bg-primary d-flex flex-column align-items-center justify-content-center">
-        <h1 class="display-3 text-uppercase mb-3">projects</h1>
+        <h1 class="display-4 text-uppercase mb-3" style="font-size: 2.5rem;">projects</h1>
         
     </div>
     <!-- Page Header Start -->
 
 
-    <!-- About Start -->
+    <!-- Projects Start -->
     <div class="container-fluid pt-5">
         <div class="container pt-5">
-            <div class="row align-items-center">
-                
-                <div class="col-lg-6 ">
-                    <h1 class="display-4 text-uppercase mb-4">Human Pose Estimation in Mobile App</h1>
-                    <h5 class="text-uppercase text-primary mb-3">August 2023 - Present</h5>
-                    <p class="mb-4">Evaluated SOTA 3D Human Pose Estimation on SportsPose dataset, deployed the model as an iOS app and evaluated their performance on iOS devices.</p>
+            <div class="row">
+                <!-- Writing Style LLM Project -->
+                <div class="col-lg-6 mb-5">
+                    <div class="project-card h-100">
+                        <div class="project-card-body">
+                            <h4 class="project-card-title text-uppercase display-4 mb-3">Mimick the Writing Style using LLM</h4>
+                            <h6 class="text-primary mb-3">August 2024 - October 2024</h6>
+                            <p class="project-card-text mb-4">Engineered an NLP system using LLaMA 3 (8B parameters) that analyzes writing patterns such as vocabulary, sentence structure, readability from user documents and fine-tuned the model using QLoRA/LoRA techniques to replicate personal writing styles.</p>
+                            <a href="https://github.com/Amirthavarshini-Dhanavel/MimickMyStyle_LLM" class="btn btn-primary mt-auto" target="_blank">
+                                <i class="fab fa-github mr-2"></i>View on GitHub
+                            </a>
+                        </div>
+                    </div>
                 </div>
-           
-                <div class="col-lg-6">
-                    <h1 class="display-4 text-uppercase mb-4">Smart Health Predictor System</h1>
-                    <h5 class="text-uppercase text-primary mb-3"> Febraury 2023 - April 2023</h5>
-                    <p class="mb-4">Designed a web app with Flask API, JavaScript which delivers predictions of probable disease when given a patient's report.
-                        Formulated algorithms like decision tree classifier, random forest classifier, and CNN using Sklearn, Pytorch to predict 6 types of diseases with accuracy greater than 90%.</p>
-              
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid pt-5">
-        <div class="container pt-5">
-            <div class="row align-items-center">
-                
-                <div class="col-lg-6">
-                    <h1 class="display-4 text-uppercase mb-4">Coral Detection Using Detection Transformer</h1>
-                    <h5 class="text-uppercase text-primary mb-3">September 2022 - December 2022</h5>
-                    <p class="mb-4">Implemented object detection using the detection transformer to detect 2 types of corals: Elkhorn and Staghorn with accuracy of 99%.
-                        Executed an algorithm to calculate the growth rate of corals from the coral image dataset for industrial purposes by the Coral Restoration Foundation, Florida.
-                        </p>
-                </div>
-                
-                <div class="col-lg-6">
-                    <h1 class="display-4 text-uppercase mb-4">
-                        COVID-19 Detection using CNN</h1>
-                    <h5 class="text-uppercase text-primary mb-3">December 2020 - March 2021</h5>
-                    <p class="mb-4">Constructed a CNN using Keras API for the detection of COVID-19 Pneumonia from chest X-ray images and integrated the trained model using
-                         Flask API into a web app developed using JQuery, JavaScript that detects COVID-19 when providing a chest x-ray image of a patient.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid pt-5">
-        <div class="container pt-5">
-            <div class="row align-items-center">
-                
-                <div class="col-lg-6">
-                    <h1 class="display-4 text-uppercase mb-4">Mobile App based Personal assistant for Alzheimer’s patients</h1>
-                    <h5 class="text-uppercase text-primary mb-3">May 2020 - December 2020</h5>
-                    <p class="mb-4">Built a mobile application using Android Studio that acts as a personal assistant to Alzheimer’s and dementia patients 
-                        which achieves it with features like Face recognition, Wander detection, Fall detection, Daily Reminders with Tensorflow and OpenCV.</p>
-                </div>
-                
-                <div class="col-lg-6">
-                    <h1 class="display-4 text-uppercase mb-4">
-                        Web app-based Healthcare logistics</h1>
-                    <h5 class="text-uppercase text-primary mb-3">January 2020 - April 2020</h5>
-                    <p class="mb-4">Developed a fully functional logistics and technicians tracking website using JavaScript and Java that includes high-level design, 
-                        UI screens development, data storage, manipulation, and business logic using the concepts of core and advanced Java.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
 
+                <!-- Human Pose Estimation Project -->
+                <div class="col-lg-6 mb-5">
+                    <div class="project-card h-100">
+                        <div class="project-card-body">
+                            <h4 class="project-card-title text-uppercase display-4 mb-3">Human Pose Estimation in Mobile App</h4>
+                            <h6 class="text-primary mb-3">August 2023 - Present</h6>
+                            <p class="project-card-text mb-4">Evaluated SOTA 3D Human Pose Estimation on SportsPose dataset, deployed the model as an iOS app and evaluated their performance on iOS devices.</p>
+                            <a href="https://github.com/Amirthavarshini-Dhanavel/PoseEstimation_iOS" class="btn btn-primary mt-auto" target="_blank">
+                                <i class="fab fa-github mr-2"></i>View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-    
+                <!-- Smart Health Predictor System -->
+                <div class="col-lg-6 mb-5">
+                    <div class="project-card h-100">
+                        <div class="project-card-body">
+                            <h4 class="project-card-title text-uppercase display-4 mb-3">Smart Health Predictor System</h4>
+                            <h6 class="text-primary mb-3">February 2023 - April 2023</h6>
+                            <p class="project-card-text mb-4">Designed a web app with Flask API, JavaScript which delivers predictions of probable disease when given a patient's report. Formulated algorithms like decision tree classifier, random forest classifier, and CNN using Sklearn, Pytorch to predict 6 types of diseases with accuracy greater than 90%.</p>
+                            <a href="https://github.com/Amirthavarshini-Dhanavel/HealthPredictor" class="btn btn-primary mt-auto" target="_blank">
+                                <i class="fab fa-github mr-2"></i>View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coral Detection Project -->
+                <div class="col-lg-6 mb-5">
+                    <div class="project-card h-100">
+                        <div class="project-card-body">
+                            <h4 class="project-card-title text-uppercase display-4 mb-3">Coral Detection Using Detection Transformer</h4>
+                            <h6 class="text-primary mb-3">September 2022 - December 2022</h6>
+                            <p class="project-card-text mb-4">Implemented object detection using the detection transformer to detect 2 types of corals: Elkhorn and Staghorn with accuracy of 99%. Executed an algorithm to calculate the growth rate of corals from the coral image dataset.</p>
+                            <a href="https://github.com/Amirthavarshini-Dhanavel/CoralDetectionDETR" class="btn btn-primary mt-auto" target="_blank">
+                                <i class="fab fa-github mr-2"></i>View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COVID-19 Detection Project -->
+                <div class="col-lg-6 mb-5">
+                    <div class="project-card h-100">
+                        <div class="project-card-body">
+                            <h4 class="project-card-title text-uppercase display-4 mb-3">COVID-19 Detection using CNN</h4>
+                            <h6 class="text-primary mb-3">December 2020 - March 2021</h6>
+                            <p class="project-card-text mb-4">Constructed a CNN using Keras API for the detection of COVID-19 Pneumonia from chest X-ray images and integrated the trained model using Flask API into a web app developed using JQuery, JavaScript.</p>
+                            <a href="https://github.com/Amirthavarshini-Dhanavel/Covid-19CNN" class="btn btn-primary mt-auto" target="_blank">
+                                <i class="fab fa-github mr-2"></i>View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alzheimer's Assistant Project -->
+                <div class="col-lg-6 mb-5">
+                    <div class="project-card h-100">
+                        <div class="project-card-body">
+                            <h4 class="project-card-title text-uppercase display-4 mb-3">Mobile App based Personal assistant for Alzheimer's patients</h4>
+                            <h6 class="text-primary mb-3">May 2020 - December 2020</h6>
+                            <p class="project-card-text mb-4">Built a mobile application using Android Studio that acts as a personal assistant to Alzheimer's and dementia patients which achieves it with features like Face recognition, Wander detection, Fall detection, Daily Reminders.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare Logistics Project -->
+                <div class="col-lg-6 mb-5">
+                    <div class="project-card h-100">
+                        <div class="project-card-body">
+                            <h4 class="project-card-title text-uppercase display-4 mb-3">Web app-based Healthcare logistics</h4>
+                            <h6 class="text-primary mb-3">January 2020 - April 2020</h6>
+                            <p class="project-card-text mb-4">Developed a fully functional logistics and technicians tracking website using JavaScript and Java that includes high-level design, UI screens development, data storage, manipulation, and business logic.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Projects End -->
+
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-md-5" style="margin-top: 90px;">
