@@ -9837,8 +9837,8 @@ h6,
 }
 
 .page-header {
-  height: 400px;
-  margin-bottom: 90px;
+  height: 250px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 991.98px) {
@@ -9952,4 +9952,48 @@ h6,
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+/*adding new*/
+.project-card {
+  background-color: #f8f9fa;
+  border: none;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-title {
+  font-size: 2.5rem !important;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 1rem;
+}
+
+.project-card-text {
+  flex-grow: 1;
+}
+
+@media (max-width: 1200px) {
+  .page-header h1.display-4 {
+      font-size: calc(1.3rem + 1.5vw) !important;
+  }
 }
