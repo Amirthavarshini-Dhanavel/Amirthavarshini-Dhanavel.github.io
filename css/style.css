@@ -9997,3 +9997,134 @@ h6,
       font-size: calc(1.3rem + 1.5vw) !important;
   }
 }
+
+/*box pop up*/
+.resume-box {
+  background-color: #F4F5F8;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.resume-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.resume-box h4 {
+  color: #222429;
+  margin-bottom: 15px;
+}
+
+.resume-box h5 {
+  margin-bottom: 10px;
+}
+
+.resume-box p {
+  color: #686A6F;
+  margin-bottom: 0;
+}
+
+/*intro section*/
+.intro-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;  /* Reduced from 2rem */
+}
+
+.intro-block {
+  transition: all 0.3s ease;
+  padding: 1rem;    /* Reduced from 1.5rem */
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  margin-bottom: 1rem; /* Added for consistent spacing */
+}
+
+.intro-block h3 {
+  font-size: 1.25rem;  /* Reduced from 1.5rem */
+  font-weight: 600;
+  margin-bottom: 0.5rem;  /* Added for better spacing */
+}
+
+.intro-block p {
+  line-height: 1.6;    /* Reduced from 1.8 */
+  margin-bottom: 0;
+  font-size: 0.95rem;  /* Slightly smaller text */
+}
+
+/* Add responsive adjustments */
+@media (max-width: 992px) {
+  .intro-section {
+      margin-bottom: 1rem;
+  }
+  
+  .col-lg-4 img {
+      max-width: 60%;
+      margin: 2rem auto;
+  }
+}
+.intro-block i {
+  font-size: 1.25rem;
+}
+
+.intro-block p {
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+/*resume headings*/
+
+.section-heading {
+  position: relative;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.section-heading:hover {
+  transform: translateX(10px);
+}
+
+.section-heading h1 {
+  position: relative;
+  z-index: 1;
+}
+
+.section-heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #17c5ff;
+  border-radius: 4px;
+}
+
+.section-icon {
+  font-size: 2rem;
+  color: #17c5ff;
+  opacity: 0.2;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.section-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+.section-heading:hover .section-icon {
+  opacity: 0.4;
+}
