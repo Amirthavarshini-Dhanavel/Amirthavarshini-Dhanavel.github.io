@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Skills - Amirthavarshini Dhanavel</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Custom Skills Styles -->
+    <style>
+        /* Skill Filters */
+        .skill-filters {
+            margin-bottom: 2rem;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            border: 2px solid #007bff;
+            color: #007bff;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #007bff;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+        }
+        
+        /* Skill Categories */
+        .skill-category {
+            transition: all 0.5s ease;
+        }
+        
+        .skill-category.hidden {
+            display: none;
+        }
+        
+        /* Skill Items */
+        .skill-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: visible;
+            height: 100%;
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .skill-item:hover::before {
+            left: 100%;
+        }
+        
+        /* Skill Icons */
+        .skill-icon {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover .skill-icon {
+            transform: scale(1.1);
+            color: #0056b3;
+        }
+        
+        .skill-item h5 {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #333;
+            font-size: 1rem;
+        }
+        
+        /* Skill Bars */
+        .skill-bar {
+            background: #e9ecef;
+            height: 6px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 0.4rem;
+            position: relative;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            border-radius: 10px;
+            width: 0%;
+            transition: width 1.5s ease-in-out;
+            position: relative;
+        }
+        
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .skill-level {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #007bff;
+        }
+        
+        /* Tooltip */
+        .skill-tooltip {
+            position: absolute;
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+            max-width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        
+        .skill-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 4px solid transparent;
+            border-top-color: #333;
+        }
+        
+        .skill-item:hover .skill-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Category Headers */
+        .skill-category h3 {
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .skill-category h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            border-radius: 2px;
+        }
+        
+        /* Personal Branding Section */
+        .section-heading p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+        
+        /* Ensure tooltips are not clipped */
+        .skill-category .row {
+            overflow: visible;
+        }
+        
+        .skill-category .col-lg-4,
+        .skill-category .col-md-6 {
+            overflow: visible;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .filter-btn {
+                margin: 5px;
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .skill-item {
+                padding: 1.2rem;
+            }
+            
+            .skill-icon {
+                font-size: 2rem;
+            }
+            
+            .skill-tooltip {
+                max-width: 200px;
+                font-size: 0.75rem;
+                white-space: normal;
+            }
+        }
+        
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.6s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.6s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+    <style>
+        /* Disable skill tooltips entirely */
+        .skill-tooltip { display: none !important; }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-white position-relative">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand text-secondary">
+                <h1 class="display-4 text-uppercase">AMIRTHAVARSHINI DHANAVEL</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ml-auto py-0 pr-3 border-right">
+                    <a href="index.html" class="nav-item nav-link">About</a>
+                    <a href="experience.html" class="nav-item nav-link">Experience</a>
+                    <a href="skills.html" class="nav-item nav-link active">Skills</a>
+                    <a href="education.html" class="nav-item nav-link">Education</a>
+                    <a href="about.html" class="nav-item nav-link">Projects</a>
+                    <a href="about1.html" class="nav-item nav-link">Contact</a>
+                 
+                </div>
+               
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="page-header container-fluid bg-primary d-flex flex-column align-items-center justify-content-center">
+        <h1 class="display-4 text-uppercase mb-3" style="font-size: 2.5rem;">Skills</h1>
+        
+    </div>
+    <!-- Page Header Start -->
+
+
+    <!-- Personal Branding & Skills Filter Section -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-120 text-center">
+                    <!-- <div class="section-heading mb-4"> -->
+                        <!-- <h2 class="display-4 text-uppercase mb-3">My Approach to Learning</h2> -->
+                        <p class="lead mb-4">As a passionate full-stack developer and data scientist, I believe in continuous learning and hands-on application. I combine technical expertise with creative problem-solving to build innovative solutions that make a real impact.</p>
+                    <!-- </div> -->
+                    <div class="skill-filters">
+                        <button class="filter-btn active" data-filter="all">All Skills</button>
+                        <button class="filter-btn" data-filter="programming">Programming</button>
+                        <button class="filter-btn" data-filter="frontend">Frontend</button>
+                        <button class="filter-btn" data-filter="backend">Backend</button>
+                        <button class="filter-btn" data-filter="datascience">Data Science</button>
+                        <button class="filter-btn" data-filter="tools">Tools & DevOps</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills Start -->
+    <div class="container-fluid pt-5">
+        <div class="container pt-5">
+            <!-- <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading text-center mb-5">
+                        <h1 class="display-4 text-uppercase mb-4">Technical Skills</h1>
+                        <i class="fas fa-code section-icon"></i>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Programming Languages -->
+            <div class="skill-category" data-category="programming">
+                <div class="row mb-5">
+                    <div class="col-lg-12">
+                        <h3 class="text-uppercase mb-4 text-primary">
+                            <i class="fas fa-laptop-code mr-2"></i>Programming Languages
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="Python" data-level="95" data-description="Advanced proficiency in Python for data science, web development, and automation">
+                            <div class="skill-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <h5>Python</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                            <span class="skill-level">Expert</span>
+                            <div class="skill-tooltip">Advanced proficiency in Python for data science, web development, and automation</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="JavaScript" data-level="90" data-description="Strong experience in modern JavaScript, ES6+, and asynchronous programming">
+                            <div class="skill-icon">
+                                <i class="fab fa-js-square"></i>
+                            </div>
+                            <h5>JavaScript</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                            <span class="skill-level">Advanced</span>
+                            <div class="skill-tooltip">Strong experience in modern JavaScript, ES6+, and asynchronous programming</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="TypeScript" data-level="85" data-description="Type-safe JavaScript development for scalable applications">
+                            <div class="skill-icon">
+                                <i class="fab fa-js-square"></i>
+                            </div>
+                            <h5>TypeScript</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                            <span class="skill-level">Advanced</span>
+                            <div class="skill-tooltip">Type-safe JavaScript development for scalable applications</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="Java" data-level="80" data-description="Object-oriented programming and enterprise application development">
+                            <div class="skill-icon">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <h5>Java</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                            <span class="skill-level">Intermediate</span>
+                            <div class="skill-tooltip">Object-oriented programming and enterprise application development</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="C++" data-level="75" data-description="System programming and performance-critical applications">
+                            <div class="skill-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h5>C++</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                            <span class="skill-level">Intermediate</span>
+                            <div class="skill-tooltip">System programming and performance-critical applications</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="SQL" data-level="90" data-description="Database design, optimization, and complex query development">
+                            <div class="skill-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h5>SQL</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                            <span class="skill-level">Advanced</span>
+                            <div class="skill-tooltip">Database design, optimization, and complex query development</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frontend Technologies -->
+            <div class="skill-category" data-category="frontend">
+                <div class="row mb-5">
+                    <div class="col-lg-12">
+                        <h3 class="text-uppercase mb-4 text-primary">
+                            <i class="fas fa-paint-brush mr-2"></i>Frontend Technologies
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="React" data-level="90" data-description="Building dynamic user interfaces with React hooks and modern patterns">
+                            <div class="skill-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <h5>React</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                            <span class="skill-level">Advanced</span>
+                            <div class="skill-tooltip">Building dynamic user interfaces with React hooks and modern patterns</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="Next.js" data-level="85" data-description="Full-stack React applications with SSR and static generation">
+                            <div class="skill-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h5>Next.js</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                            <span class="skill-level">Advanced</span>
+                            <div class="skill-tooltip">Full-stack React applications with SSR and static generation</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="D3.js" data-level="80" data-description="Interactive data visualizations and custom charts">
+                            <div class="skill-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h5>D3.js</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                            <span class="skill-level">Intermediate</span>
+                            <div class="skill-tooltip">Interactive data visualizations and custom charts</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="Tailwind CSS" data-level="85" data-description="Utility-first CSS framework for rapid UI development">
+                            <div class="skill-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h5>Tailwind CSS</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                            <span class="skill-level">Advanced</span>
+                            <div class="skill-tooltip">Utility-first CSS framework for rapid UI development</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend & Frameworks -->
+            <div class="skill-category" data-category="backend">
+                <div class="row mb-5">
+                    <div class="col-lg-12">
+                        <h3 class="text-uppercase mb-4 text-primary">
+                            <i class="fas fa-server mr-2"></i>Backend & Frameworks
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="Django" data-level="90" data-description="Rapid web development with Django's powerful ORM and admin interface">
+                            <div class="skill-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <h5>Django</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                            <span class="skill-level">Advanced</span>
+                            <div class="skill-tooltip">Rapid web development with Django's powerful ORM and admin interface</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="Node.js" data-level="85" data-description="Server-side JavaScript for scalable network applications">
+                            <div class="skill-icon">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <h5>Node.js</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                            <span class="skill-level">Advanced</span>
+                            <div class="skill-tooltip">Server-side JavaScript for scalable network applications</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="Flask" data-level="80" data-description="Lightweight Python web framework for microservices">
+                            <div class="skill-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h5>Flask</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                            <span class="skill-level">Intermediate</span>
+                            <div class="skill-tooltip">Lightweight Python web framework for microservices</div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+
+            <!-- Data Science & ML -->
+            <div class="skill-category" data-category="datascience">
+                <div class="row mb-5">
+                    <div class="col-lg-12">
+                        <h3 class="text-uppercase mb-4 text-primary">
+                            <i class="fas fa-brain mr-2"></i>Data Science & Machine Learning
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="TensorFlow" data-level="85" data-description="Deep learning models and neural network development">
+                            <div class="skill-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h5>TensorFlow</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                            <span class="skill-level">Advanced</span>
+                            <div class="skill-tooltip">Deep learning models and neural network development</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="PyTorch" data-level="80" data-description="Dynamic neural networks and research-oriented ML">
+                            <div class="skill-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h5>PyTorch</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                            <span class="skill-level">Intermediate</span>
+                            <div class="skill-tooltip">Dynamic neural networks and research-oriented ML</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="Scikit-learn" data-level="90" data-description="Machine learning algorithms and model evaluation">
+                            <div class="skill-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h5>Scikit-learn</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                                                        <span class="skill-level">Advanced</span>
+                            <div class="skill-tooltip">Machine learning algorithms and model evaluation</div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+
+            <!-- Tools & DevOps -->
+            <div class="skill-category" data-category="tools">
+                <div class="row mb-5">
+                    <div class="col-lg-12">
+                        <h3 class="text-uppercase mb-4 text-primary">
+                            <i class="fas fa-tools mr-2"></i>Tools & DevOps
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="Git" data-level="95" data-description="Version control and collaborative development workflows">
+                            <div class="skill-icon">
+                                <i class="fab fa-git-alt"></i>
+                            </div>
+                            <h5>Git</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                            <span class="skill-level">Expert</span>
+                            <div class="skill-tooltip">Version control and collaborative development workflows</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="Docker" data-level="80" data-description="Containerization and microservices deployment">
+                            <div class="skill-icon">
+                                <i class="fab fa-docker"></i>
+                            </div>
+                            <h5>Docker</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                            <span class="skill-level">Intermediate</span>
+                            <div class="skill-tooltip">Containerization and microservices deployment</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="skill-item" data-skill="AWS" data-level="85" data-description="Cloud computing and scalable infrastructure">
+                            <div class="skill-icon">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <h5>AWS</h5>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                            <span class="skill-level">Advanced</span>
+                            <div class="skill-tooltip">Cloud computing and scalable infrastructure</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Skills End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-md-5" style="margin-top: 90px;">
+        <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a href="index.html" class="navbar-brand">
+                    <h3 class="m-0 mt-n2 text-white display-4">Back</h3>
+                </a>
+                
+            </div>
+            
+            
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Skills Page JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize skill bars animation
+            initializeSkillBars();
+            
+            // Initialize filter functionality
+            initializeFilters();
+            
+            // Initialize scroll animations
+            initializeScrollAnimations();
+        });
+        
+        function initializeSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const progressBar = entry.target;
+                        const width = progressBar.getAttribute('data-width');
+                        
+                        setTimeout(() => {
+                            progressBar.style.width = width;
+                        }, 200);
+                        
+                        observer.unobserve(progressBar);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            skillBars.forEach(bar => {
+                observer.observe(bar);
+            });
+        }
+        
+        function initializeFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const skillCategories = document.querySelectorAll('.skill-category');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter categories
+                    skillCategories.forEach(category => {
+                        const categoryType = category.getAttribute('data-category');
+                        
+                        if (filter === 'all' || categoryType === filter) {
+                            category.classList.remove('hidden');
+                            category.style.animation = 'fadeIn 0.6s ease-in';
+                        } else {
+                            category.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        }
+        
+        function initializeScrollAnimations() {
+            const skillItems = document.querySelectorAll('.skill-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('fade-in');
+                        }, index * 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            skillItems.forEach(item => {
+                observer.observe(item);
+            });
+        }
+        
+        // Add hover effects for skill items
+        document.querySelectorAll('.skill-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.01)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        // Add click effects for filter buttons
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Add ripple effect
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+        
+        // Add CSS for ripple effect
+        const style = document.createElement('style');
+        style.textContent = `
+            .filter-btn {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3);
+                transform: scale(0);
+                animation: ripple-animation 0.6s linear;
+                pointer-events: none;
+            }
+            
+            @keyframes ripple-animation {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>

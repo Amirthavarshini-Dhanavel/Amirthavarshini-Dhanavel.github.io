@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Experience - Amirthavarshini Dhanavel</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Custom Timeline Styles -->
+    <style>
+        .experience-overview {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .stat-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-box h4 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #007bff, #0056b3);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 100px;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: 35px;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            box-shadow: 0 0 0 4px white, 0 0 0 8px #007bff;
+            z-index: 2;
+        }
+        
+        .experience-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #007bff;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .experience-title h4 {
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-title h5 {
+            color: #007bff;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-duration {
+            background: #e9ecef;
+            color: #6c757d;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .experience-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-badge {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .experience-body p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .achievement-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .achievement-list li {
+            padding: 0.5rem 0;
+            color: #555;
+            line-height: 1.5;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .achievement-list i {
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 25px;
+                background: linear-gradient(to bottom, #007bff, #0056b3);
+            }
+            
+            .timeline-item {
+                padding-left: 70px;
+            }
+            
+            .timeline-marker {
+                left: 10px;
+                width: 25px;
+                height: 25px;
+                font-size: 12px;
+                background: linear-gradient(135deg, #007bff, #0056b3);
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .experience-tech {
+                margin-top: 1rem;
+            }
+            
+            .experience-overview {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-white position-relative">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand text-secondary">
+                <h1 class="display-4 text-uppercase">AMIRTHAVARSHINI DHANAVEL</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ml-auto py-0 pr-3 border-right">
+                    <a href="index.html" class="nav-item nav-link">About</a>
+                    <a href="experience.html" class="nav-item nav-link active">Experience</a>
+                    <a href="skills.html" class="nav-item nav-link">Skills</a>
+                    <a href="education.html" class="nav-item nav-link">Education</a>
+                    <a href="about.html" class="nav-item nav-link">Projects</a>
+                    <a href="about1.html" class="nav-item nav-link">Contact</a>
+                 
+                </div>
+               
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="page-header container-fluid bg-primary d-flex flex-column align-items-center justify-content-center" style="padding: 1rem 0;">
+        <h1 class="display-4 text-uppercase mb-3" style="font-size: 2.5rem;">Experience</h1>
+        
+    </div>
+    <!-- Page Header Start -->
+
+
+    <!-- Experience Overview Start -->
+    <div class="container-fluid pt-3">
+        <div class="container pt-3">
+            <div class="row justify-content-center">
+                <div class="col-lg-30 text-center">
+                    <div class="experience-overview mb-5">
+                        <!-- <h2 class="text-uppercase mb-4">Professional Experience Overview</h2> -->
+                        <p class="lead mb-4">With over 2+ years of experience in full-stack development and data science, I specialize in building scalable web applications, implementing AI/ML solutions, and creating innovative mobile applications. My expertise spans across modern web technologies, cloud platforms, and machine learning frameworks.</p>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="stat-box">
+                                    <h4 class="text-primary">2+</h4>
+                                    <p class="mb-0">Years Experience</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="stat-box">
+                                    <h4 class="text-primary">15+</h4>
+                                    <p class="mb-0">Technologies</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="stat-box">
+                                    <h4 class="text-primary">8+</h4>
+                                    <p class="mb-0">ML Models Deployed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Experience Overview End -->
+
+    <!-- Experience Timeline Start -->
+    <div class="container-fluid pt-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- <div class="section-heading text-center mb-5">
+                         <h1 class="display-4 text-uppercase mb-4">Work Experience</h1>
+                        <i class="fas fa-briefcase section-icon"></i>
+                    </div> -->
+                </div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="experience-title">
+                                    <h4 class="text-uppercase mb-2">Software Engineer</h4>
+                                    <h5 class="text-primary mb-2">AksharaPlus - Charlotte, NC</h5>
+                                    <span class="experience-duration">August 2024 - Present</span>
+                                </div>
+                                <div class="experience-tech">
+                                    <span class="tech-badge">Next.js</span>
+                                    <span class="tech-badge">React</span>
+                                    <span class="tech-badge">TypeScript</span>
+                                    <span class="tech-badge">Django</span>
+                                    <span class="tech-badge">PostgreSQL</span>
+                                    <span class="tech-badge">D3.js</span>
+                                </div>
+                            </div>
+                            <div class="experience-body">
+                                <p class="mb-3">Built an SEO-optimized personalized learning platform and course management system using Next.js, React, and TypeScript, improving page load times by 40% and content discoverability.</p>
+                                <ul class="achievement-list">
+                                    <li><i class="fas fa-check text-success mr-2"></i>Developed scalable RESTful APIs in Django with structured Zod validation, securing 30+ endpoints</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Designed optimized PostgreSQL schemas for tracking user progress, efficiently managing 100+ records</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Implemented comprehensive security with JWT, CSRF protection, reducing vulnerabilities by 95%</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Integrated Google Sign-In via NextAuth.js, reducing sign-up friction by 60%</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Created interactive D3.js graphs for course dependencies with drag-and-drop navigation</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Achieved 80% test coverage with Jest and CI/CD pipelines</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="experience-title">
+                                    <h4 class="text-uppercase mb-2">Graduate Research and Teaching Assistant</h4>
+                                    <h5 class="text-primary mb-2">University of North Carolina at Charlotte - Charlotte, NC</h5>
+                                    <span class="experience-duration">August 2023 - January 2024</span>
+                                </div>
+                                <div class="experience-tech">
+                                    <span class="tech-badge">iOS</span>
+                                    <span class="tech-badge">Swift</span>
+                                    <span class="tech-badge">CoreML</span>
+                                    <span class="tech-badge">ONNX</span>
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">TensorFlow</span>
+                                </div>
+                            </div>
+                            <div class="experience-body">
+                                <p class="mb-3">Conducted research in pose estimation with Sports Pose data in mobile apps, deploying 8+ pose estimation models (YOLOv5, YOLOv8, RTMPose, ViTPose, PoseFormerV2) on iOS by converting them to CoreML/ONNX, enabling real-time inference and reducing app load time by 20%.</p>
+                                <ul class="achievement-list">
+                                    <li><i class="fas fa-check text-success mr-2"></i>Built a Swift, Xcode iOS app from scratch using storyboard, integrating ML models with dynamic UI updates, drop-down model selection, and real-time visualization overlays</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Improved 3D model runtime by 30% through inference logic optimization, maintaining real-time feedback and reducing lag in extended use</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Engineered dynamic model-switching functionality with drop-down-based selection, enabling real-time comparison of models and streamlining testing workflows</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Assisted professor by holding office hours, grading assignments/exams, and developing teaching modules while testing and optimizing model performance in iOS applications</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="experience-title">
+                                    <h4 class="text-uppercase mb-2">Software Engineer</h4>
+                                    <h5 class="text-primary mb-2">Zuari Technologies, India</h5>
+                                    <span class="experience-duration">January 2021 - July 2021</span>
+                                </div>
+                                <div class="experience-tech">
+                                    <span class="tech-badge">Node.js</span>
+                                    <span class="tech-badge">React</span>
+                                    <span class="tech-badge">Flask</span>
+                                    <span class="tech-badge">MongoDB</span>
+                                    <span class="tech-badge">TensorFlow</span>
+                                    <span class="tech-badge">AWS</span>
+                                </div>
+                            </div>
+                            <div class="experience-body">
+                                <p class="mb-3">Architected microservices using Node.js, Express.js and Flask, improving system reliability and reducing API response time by 40%.</p>
+                                <ul class="achievement-list">
+                                    <li><i class="fas fa-check text-success mr-2"></i>Built AI-powered image processing systems with OpenCV and TensorFlow</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Designed MongoDB databases with optimized query performance</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Developed React.js real-time dashboards</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Implemented secure authentication with OAuth 2.0 and JWT</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Established CI/CD pipelines using GitHub Actions and Terraform</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="experience-title">
+                                    <h4 class="text-uppercase mb-2">Research Assistant</h4>
+                                    <h5 class="text-primary mb-2">Easwari Engineering College, Tamil Nadu, India</h5>
+                                    <span class="experience-duration">August 2019 - January 2020</span>
+                                </div>
+                                <div class="experience-tech">
+                                    <span class="tech-badge">Android</span>
+                                    <span class="tech-badge">TensorFlow</span>
+                                    <span class="tech-badge">OpenCV</span>
+                                    <span class="tech-badge">Java</span>
+                                    <span class="tech-badge">Machine Learning</span>
+                                </div>
+                            </div>
+                            <div class="experience-body">
+                                <p class="mb-3">Built a mobile application using Android Studio that acts as a personal assistant to Alzheimer's and dementia patients with advanced AI features.</p>
+                                <ul class="achievement-list">
+                                    <li><i class="fas fa-check text-success mr-2"></i>Implemented Face recognition, Wander detection, Fall detection, and Daily Reminders</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Used TensorFlow and OpenCV for machine learning capabilities</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Surveyed research papers on Face recognition and Fall detection using machine learning</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Experience Timeline End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-md-5" style="margin-top: 90px;">
+        <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a href="index.html" class="navbar-brand">
+                    <h3 class="m-0 mt-n2 text-white display-4">Back</h3>
+                </a>
+                
+            </div>
+            
+            
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
